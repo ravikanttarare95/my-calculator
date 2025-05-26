@@ -11,4 +11,11 @@ function deleteLastCharacter() {
   display.value = display.value.slice(0, -1);
 }
 
-function calculateResult() {}
+function calculateResult() {
+  try {
+    const result = eval(display.value);
+    display.value = result;
+  } catch (error) {
+    display.value = "Error";
+  }
+}
