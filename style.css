@@ -5,11 +5,11 @@
 }
 
 body {
-  height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
   background: #e3f2fd;
+  margin-top: 10px;
+  padding: 0 10px;
 }
 
 .container {
@@ -18,12 +18,11 @@ body {
   margin: 0 20px;
   width: 400px;
   background: #f0f9ff;
-  border-radius: 10px;
   background-color: #e3f2fd;
-  box-shadow: 10px 10px 20px #c5d6e1, -10px -10px 50px #ffffff,
+  box-shadow: 15px 15px 30px #c5d6e1, -15px -15px 30px #ffffff,
     inset 8px 8px 16px #c5d6e1;
-  border-radius: 20px;
-  padding: 1.5rem;
+  border-radius: 25px;
+  padding: 2rem;
 }
 
 h1 {
@@ -41,15 +40,16 @@ h1 {
 }
 
 input {
-  height: 60px;
-  border-radius: 30px;
+  height: 80px;
+  border-radius: 20px;
   border: none;
-  background: #e3f2fd;
-  padding: 20px;
-  font-size: 1.8rem;
+  background: #f0f9ff;
+  padding: 20px 30px;
+  font-size: 2rem;
   text-align: right;
-  box-shadow: inset -5px -5px 20px #ffffff, inset 4px 4px 8px #c5d6e1;
+  box-shadow: inset -8px -8px 20px #ffffff, inset 8px 8px 20px #c5d6e1;
   transition: all 0.3s ease;
+  color: #0d47a1;
 }
 
 input::placeholder {
@@ -57,24 +57,28 @@ input::placeholder {
   opacity: 0.7;
 }
 
+input:focus {
+  outline: none;
+}
+
 .buttons {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 25px;
   text-align: center;
   place-items: center;
 }
 
 .btn {
-  height: 55px;
-  width: 55px;
-  border-radius: 25px;
+  height: 60px;
+  width: 60px;
+  border-radius: 20px;
   border: none;
   background: #e3f2fd;
   box-shadow: inset -5px -5px 20px #ffffff, inset 4px 4px 8px #c5d6e1,
     2px 2px 3px #c5d6e1;
   color: #0d47a1;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -91,7 +95,7 @@ input::placeholder {
 }
 
 .btn-equal {
-  width: 100%;
+  width: 90%;
   grid-column: span 2;
 }
 
@@ -100,16 +104,19 @@ footer {
   bottom: 0;
   width: 100%;
   text-align: center;
-  padding: 10px;
-  color: #0d47a1;
+  padding: 8px;
+  background: linear-gradient(145deg, #1e1e1e, #2d2d2d);
+  color: #90caf9;
   font-size: 1rem;
-    background: #f0f9ff;
+  box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
 }
 
-footer a{
-    color: #0d47a1;
-    text-decoration: none;
-    font-weight: bold;
+footer a {
+  color: #c7c7c7;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 .github-link-container {
@@ -117,14 +124,17 @@ footer a{
   justify-content: center;
   align-items: center;
   gap: 10px;
-  margin-top: 10px;
+}
+
+footer img {
+  filter: invert(1) brightness(0.7);
 }
 
 @media screen and (max-width: 480px) {
   .container {
     width: 100%;
     margin: 10px;
-    padding: 2rem;
+    padding: 1.2rem;
   }
 
   h1 {
