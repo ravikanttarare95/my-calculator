@@ -10,6 +10,7 @@ body {
   background: #e3f2fd;
   margin-top: 10px;
   padding: 0 10px;
+  font-family: "Roboto Mono", monospace;
 }
 
 .container {
