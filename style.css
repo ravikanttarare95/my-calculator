@@ -126,11 +126,16 @@ footer a {
   gap: 10px;
 }
 
-footer img {
+.github-logo {
+  width: 30px;
   filter: invert(1) brightness(0.7);
 }
 
 @media screen and (max-width: 480px) {
+  body {
+    margin-top: 30px;
+  }
+
   .container {
     width: 100%;
     margin: 10px;
@@ -139,7 +144,7 @@ footer img {
 
   h1 {
     font-size: 1.5rem;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
   }
 
   .buttons {
@@ -160,5 +165,14 @@ footer img {
   .btn-equal {
     width: 85%;
     grid-column: span 2;
+  }
+
+  footer {
+    font-size: 0.7rem;
+    padding: 6px;
+  }
+
+  .github-logo {
+    width: 25px;
   }
 }
