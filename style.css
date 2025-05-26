@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: "DS-Digital Normal";
+  font-style: normal;
+  font-weight: normal;
+  src: local("DS-Digital Normal"), url("DS-DIGI.woff") format("woff");
+}
+
 body {
   display: flex;
   justify-content: center;
@@ -18,7 +25,6 @@ body {
   flex-direction: column;
   margin: 0 20px;
   width: 400px;
-  background: #f0f9ff;
   background-color: #e3f2fd;
   box-shadow: 15px 15px 30px #c5d6e1, -15px -15px 30px #ffffff,
     inset 8px 8px 16px #c5d6e1;
@@ -41,12 +47,13 @@ h1 {
 }
 
 input {
+  font-family: "DS-Digital Normal";
   height: 80px;
-  border-radius: 20px;
+  border-radius: 15px;
   border: none;
   background: #f0f9ff;
-  padding: 20px 30px;
-  font-size: 2rem;
+  padding: 0 20px;
+  font-size: 2.2rem;
   text-align: right;
   box-shadow: inset -8px -8px 20px #ffffff, inset 8px 8px 20px #c5d6e1;
   transition: all 0.3s ease;
