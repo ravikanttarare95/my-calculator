@@ -33,11 +33,38 @@ body {
 }
 
 h1 {
-  text-align: center;
   color: #0d47a1;
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.calculator-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  position: relative;
+  width: 100%;
+}
+
+.theme-btn {
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  border: none;
+  background: #e3f2fd;
+  box-shadow: 5px 5px 10px #c5d6e1, -5px -5px 10px #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.theme-btn:hover {
+  background: #def0ff;
+  transform: scale(1.1);
 }
 
 .calculator {
@@ -152,7 +179,12 @@ footer a {
 
   h1 {
     font-size: 1.5rem;
-    margin-bottom: 50px;
+  }
+
+  .theme-btn {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
   }
 
   .buttons {
