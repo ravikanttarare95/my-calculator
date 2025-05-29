@@ -19,3 +19,27 @@ function calculateResult() {
     display.value = "Error";
   }
 }
+
+let themeIcon = document.getElementById("theme-icon");
+function toggleThemeMode() {
+  if (themeIcon.src.includes("light-mode.png")) {
+    document.body.classList.add("dark-mode");
+    themeIcon.src = "./images/night-mode.png";
+    localStorage.setItem("themeMode", "dark");
+  } else {
+    document.body.classList.remove("dark-mode");
+    themeIcon.src = "./images/light-mode.png";
+    localStorage.setItem("themeMode", "light");
+  }
+}
+
+window.onload = function () {
+  const themeMode = localStorage.getItem("themeMode");
+  if (themeMode === "dark") {
+    document.body.classList.add("dark-mode");
+    themeIcon.src = "./images/night-mode.png";
+  } else {
+    document.body.classList.add("light-mode");
+    themeIcon.src = "./images/light-mode.png";
+  }
+};
