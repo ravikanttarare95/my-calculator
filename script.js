@@ -12,8 +12,9 @@ function deleteLastCharacter() {
 }
 
 function calculateResult() {
+  const expression = display.value.replace(/×/g, "*").replace(/÷/g, "/"); // Very Important Concept
   try {
-    const result = eval(display.value);
+    const result = eval(expression);
     display.value = result;
   } catch (error) {
     display.value = "Error";
