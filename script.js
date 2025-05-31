@@ -2,13 +2,23 @@ const display = document.getElementById("display");
 const calculator = document.querySelector(".calculator");
 
 calculator.addEventListener("click", (e) => {
-  if (
-    e.target.classList.contains("btn") &&
-    !e.target.classList.contains("btn-equal") &&
-    e.target.innerText !== "AC" &&
-    e.target.innerText !== "DEL"
-  ) {
-    display.value += e.target.innerText;
+  if (!e.target.classList.contains("btn")) return; // very important prevent unexpected behaviour when we click outside of the button
+
+  let value = e.target.innerText;
+
+  switch (value) {
+    case "AC":
+      clearDisplay();
+      break;
+    case "DEL":
+      deleteLastCharacter();
+      break;
+    case "=":
+      calculateResult();
+      break;
+    default: {
+      display.value += value;
+    }
   }
 });
 
