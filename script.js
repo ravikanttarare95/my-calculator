@@ -1,7 +1,16 @@
 const display = document.getElementById("display");
-function appendToDisplay(value) {
-  display.value += value;
-}
+const calculator = document.querySelector(".calculator");
+
+calculator.addEventListener("click", (e) => {
+  if (
+    e.target.classList.contains("btn") &&
+    !e.target.classList.contains("btn-equal") &&
+    e.target.innerText !== "AC" &&
+    e.target.innerText !== "DEL"
+  ) {
+    display.value += e.target.innerText;
+  }
+});
 
 function clearDisplay() {
   display.value = "";
@@ -39,8 +48,5 @@ window.onload = function () {
   if (themeMode === "dark") {
     document.body.classList.add("dark-mode");
     themeIcon.src = "./images/night-mode.png";
-  } else {
-    document.body.classList.add("light-mode");
-    themeIcon.src = "./images/light-mode.png";
   }
 };
