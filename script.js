@@ -17,6 +17,11 @@ calculator.addEventListener("click", (e) => {
       calculateResult();
       break;
     default: {
+      const lastChar = display.value.slice(-1);
+      const operators = ["%", "÷", "-", "+", "×", "."];
+      if (operators.includes(value) && operators.includes(lastChar)) {
+        return;
+      }
       display.value += value;
     }
   }
