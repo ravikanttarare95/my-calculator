@@ -48,5 +48,8 @@ window.onload = function () {
   if (themeMode === "dark") {
     document.body.classList.add("dark-mode");
     themeIcon.src = "./images/night-mode.png";
+  } else {
+    document.body.classList.remove("dark-mode");
+    themeIcon.src = "./images/light-mode.png";
   }
 };
