@@ -22,6 +22,8 @@ calculator.addEventListener("click", (e) => {
       if (operators.includes(inputValue) && operators.includes(lastChar)) {
         return;
       }
+
+      if (display.value.includes(".") && inputValue === ".") return;
       display.value += inputValue;
     }
   }
@@ -36,7 +38,8 @@ function deleteLastCharacter() {
 }
 
 function calculateResult() {
-  const expression = display.value
+  const raw = display.value;
+  const expression = raw
     .replace(/×/g, "*")
     .replace(/÷/g, "/")
     .replace(/%/g, "/100*"); // Very Important Concept
