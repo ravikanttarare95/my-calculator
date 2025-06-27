@@ -4,9 +4,9 @@ const calculator = document.querySelector(".calculator");
 calculator.addEventListener("click", (e) => {
   if (!e.target.classList.contains("btn")) return; // very important prevent unexpected behaviour when we click outside of the button
 
-  let value = e.target.innerText;
+  let inputValue = e.target.innerText;
 
-  switch (value) {
+  switch (inputValue) {
     case "AC":
       clearDisplay();
       break;
@@ -19,10 +19,10 @@ calculator.addEventListener("click", (e) => {
     default: {
       const lastChar = display.value.slice(-1);
       const operators = ["%", "÷", "-", "+", "×", "."];
-      if (operators.includes(value) && operators.includes(lastChar)) {
+      if (operators.includes(inputValue) && operators.includes(lastChar)) {
         return;
       }
-      display.value += value;
+      display.value += inputValue;
     }
   }
 });
@@ -36,12 +36,21 @@ function deleteLastCharacter() {
 }
 
 function calculateResult() {
-  const expression = display.value.replace(/×/g, "*").replace(/÷/g, "/"); // Very Important Concept
+  const expression = display.value
+    .replace(/×/g, "*")
+    .replace(/÷/g, "/")
+    .replace(/%/g, "/100*"); // Very Important Concept
   try {
-    const result = eval(expression);
-    display.value = result;
+    const result = math.evaluate(expression);
+    display.value =
+      typeof result === "number" && !Number.isInteger(result)
+        ? result.toFixed(6).replace(/\.?0+$/, "")
+        : result;
   } catch (error) {
     display.value = "Error";
+    setTimeout(() => {
+      clearDisplay();
+    }, 1000);
   }
 }
 
