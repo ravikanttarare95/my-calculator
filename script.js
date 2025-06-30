@@ -50,8 +50,10 @@ function calculateResult() {
     return;
   }
 
+  const parser = math.parser();
+
   try {
-    const result = math.evaluate(expression);
+    const result = parser.evaluate(expression);
     display.value =
       typeof result === "number" && !Number.isInteger(result)
         ? result.toFixed(6).replace(/\.?0+$/, "")
