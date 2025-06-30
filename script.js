@@ -42,7 +42,14 @@ function calculateResult() {
   const expression = raw
     .replace(/×/g, "*")
     .replace(/÷/g, "/")
-    .replace(/%/g, "/100*"); // Very Important Concept
+    .replace(/%/g, "/100*")
+    .trim(); // Very Important Concept
+
+  if (!/^[0-9+\-*/().\s]+$/.test(expression)) {
+    display.value = "Error";
+    return;
+  }
+
   try {
     const result = math.evaluate(expression);
     display.value =
